@@ -16,7 +16,7 @@ jobs:
     timeout-minutes: 10
     steps:
       - name: "☁️  checkout repository"
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: "🔧 install bun"
         run: curl -fsSL https://bun.sh/install | bash
@@ -33,7 +33,7 @@ jobs:
     timeout-minutes: 10
     steps:
       - name: "☁️  checkout repository"
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: "🔧 install bun"
         run: curl -fsSL https://bun.sh/install | bash
