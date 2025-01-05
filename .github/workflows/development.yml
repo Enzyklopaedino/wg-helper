@@ -1,0 +1,45 @@
+name: development
+
+on:
+  pull_request:
+    types:
+      - opened
+      - edited
+      - synchronize
+      - reopened
+  workflow_call:
+
+jobs:
+  test:
+    name: test
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: "☁️  checkout repository"
+        uses: actions/checkout@v2
+
+      - name: "🔧 install bun"
+        run: curl -fsSL https://bun.sh/install | bash
+
+      - name: "📦 install dependencies"
+        run: bun install
+
+      - name: "🔍 run tests"
+        run: bun run test
+
+  lint:
+    name: lint and format
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: "☁️  checkout repository"
+        uses: actions/checkout@v2
+
+      - name: "🔧 install bun"
+        run: curl -fsSL https://bun.sh/install | bash
+
+      - name: "📦 install dependencies"
+        uses: bun install
+
+      - name: "🔍 lint code"
+        run: bun run check
