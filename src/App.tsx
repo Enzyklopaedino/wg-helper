@@ -9,7 +9,6 @@ const App = () => {
 			</h1>
 			<h1 class="text-3xl font-bold underline">Hello world!</h1>
 			<Button>click me!</Button>
-			<p>Start building amazing things with Rsbuild.</p>
 		</div>
 	);
 };
