@@ -1,6 +1,6 @@
 /* eslint-disable */
 window.PR_SHOULD_USE_CONTINUATION = true;
-(function () {
+(() => {
 	var h = ['break,continue,do,else,for,if,return,while'];
 	var u = [
 		h,
@@ -89,10 +89,10 @@ window.PR_SHOULD_USE_CONTINUATION = true;
 				return ag;
 			} else {
 				if ('0' <= af && af <= '7') {
-					return parseInt(ah.substring(1), 8);
+					return Number.parseInt(ah.substring(1), 8);
 				} else {
 					if (af === 'u' || af === 'x') {
-						return parseInt(ah.substring(2), 16);
+						return Number.parseInt(ah.substring(2), 16);
 					} else {
 						return ah.charCodeAt(1);
 					}
@@ -113,10 +113,7 @@ window.PR_SHOULD_USE_CONTINUATION = true;
 			var aq = am
 				.substring(1, am.length - 1)
 				.match(
-					new RegExp(
-						'\\\\u[0-9A-Fa-f]{4}|\\\\x[0-9A-Fa-f]{2}|\\\\[0-3][0-7]{0,2}|\\\\[0-7]{1,2}|\\\\[\\s\\S]|-|[^-\\\\]',
-						'g',
-					),
+					/\\u[0-9A-Fa-f]{4}|\\x[0-9A-Fa-f]{2}|\\[0-3][0-7]{0,2}|\\[0-7]{1,2}|\\[\s\S]|-|[^-\\]/g,
 				);
 			var ak = [];
 			var af = [];
@@ -145,11 +142,9 @@ window.PR_SHOULD_USE_CONTINUATION = true;
 					}
 				}
 			}
-			af.sort(function (av, au) {
-				return av[0] - au[0] || au[1] - av[1];
-			});
+			af.sort((av, au) => av[0] - au[0] || au[1] - av[1]);
 			var ai = [];
-			var ap = [NaN, NaN];
+			var ap = [Number.NaN, Number.NaN];
 			for (var ar = 0; ar < af.length; ++ar) {
 				var at = af[ar];
 				if (at[0] <= ap[1] + 1) {
@@ -178,10 +173,7 @@ window.PR_SHOULD_USE_CONTINUATION = true;
 		}
 		function W(al) {
 			var aj = al.source.match(
-				new RegExp(
-					'(?:\\[(?:[^\\x5C\\x5D]|\\\\[\\s\\S])*\\]|\\\\u[A-Fa-f0-9]{4}|\\\\x[A-Fa-f0-9]{2}|\\\\[0-9]+|\\\\[^ux0-9]|\\(\\?[:!=]|[\\(\\)\\^]|[^\\x5B\\x5C\\(\\)\\^]+)',
-					'g',
-				),
+				/(?:\[(?:[^\x5C\x5D]|\\[\s\S])*\]|\\u[A-Fa-f0-9]{4}|\\x[A-Fa-f0-9]{2}|\\[0-9]+|\\[^ux0-9]|\(\?[:!=]|[\(\)\^]|[^\x5B\x5C\(\)\^]+)/g,
 			);
 			var ah = aj.length;
 			var an = [];
@@ -232,7 +224,7 @@ window.PR_SHOULD_USE_CONTINUATION = true;
 						aj[ak] = X(ag);
 					} else {
 						if (ai !== '\\') {
-							aj[ak] = ag.replace(/[a-zA-Z]/g, function (ao) {
+							aj[ak] = ag.replace(/[a-zA-Z]/g, (ao) => {
 								var ap = ao.charCodeAt(0);
 								return '[' + String.fromCharCode(ap & ~32, ap | 32) + ']';
 							});
@@ -325,7 +317,7 @@ window.PR_SHOULD_USE_CONTINUATION = true;
 	function g(U, T) {
 		var S = {};
 		var V;
-		(function () {
+		(() => {
 			var ad = U.concat(T);
 			var ah = [];
 			var ag = {};
@@ -348,7 +340,7 @@ window.PR_SHOULD_USE_CONTINUATION = true;
 			V = k(ah);
 		})();
 		var X = T.length;
-		var W = function (ah) {
+		var W = (ah) => {
 			var Z = ah.sourceCode,
 				Y = ah.basePos;
 			var ad = [Y, F];
@@ -491,10 +483,7 @@ window.PR_SHOULD_USE_CONTINUATION = true;
 			[F, /^[a-z_$][a-z_$@0-9]*/i, null],
 			[
 				G,
-				new RegExp(
-					'^(?:0x[a-f0-9]+|(?:\\d(?:_\\d+)*\\d*(?:\\.\\d*)?|\\.\\d\\+)(?:e[+\\-]?\\d+)?)[a-z]*',
-					'i',
-				),
+				/^(?:0x[a-f0-9]+|(?:\d(?:_\d+)*\d*(?:\.\d*)?|\.\d\+)(?:e[+\-]?\d+)?)[a-z]*/i,
 				null,
 				'0123456789',
 			],
@@ -850,9 +839,7 @@ window.PR_SHOULD_USE_CONTINUATION = true;
 		var W = Date;
 		if (!W.now) {
 			W = {
-				now: function () {
-					return +new Date();
-				},
+				now: () => +new Date(),
 			};
 		}
 		var X = 0;
@@ -860,7 +847,9 @@ window.PR_SHOULD_USE_CONTINUATION = true;
 		var ab = /\blang(?:uage)?-([\w.]+)(?!\S)/;
 		var ae = /\bprettyprint\b/;
 		function U() {
-			var ag = window.PR_SHOULD_USE_CONTINUATION ? W.now() + 250 : Infinity;
+			var ag = window.PR_SHOULD_USE_CONTINUATION
+				? W.now() + 250
+				: Number.POSITIVE_INFINITY;
 			for (; X < T.length && W.now() < ag; X++) {
 				var aj = T[X];
 				var ai = aj.className;
