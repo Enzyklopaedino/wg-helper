@@ -4,6 +4,10 @@ import { pluginReact } from '@rsbuild/plugin-react';
 export default defineConfig({
 	plugins: [pluginReact()],
 	output: {
-		assetPrefix: '/wg-helper/',
+		assetPrefix: '',
+	},
+	distPath: {
+		js: './',
+		css: './',
 	},
 });
