@@ -1,15 +1,17 @@
+import { Home } from '@/src/Home';
 import './main.css';
-import { Button } from '@/components/ui/button';
+import { Cart } from '@/src/pages/cart';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 const App = () => {
 	return (
-		<div>
-			<h1 className="text-3xl font-bold underline text-teal-400">
-				Rsbuild with React
-			</h1>
-			<h1 className="text-3xl font-bold underline">Hello world!</h1>
-			<Button>click me!</Button>
-		</div>
+		<BrowserRouter>
+			<Routes>
+				<Route path="/" element={<Home />} />
+				<Route path="/cart" element={<Cart />} />
+				<Route path="*" element={<div>No Page</div>} />
+			</Routes>
+		</BrowserRouter>
 	);
 };
 
