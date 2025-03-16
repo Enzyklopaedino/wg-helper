@@ -1,4 +1,4 @@
-import { Home } from '@/src/pages/Home';
+import { Home } from '@/src/pages/home';
 import './main.css';
 import { Cart } from '@/src/pages/cart';
 import { NotFound } from '@/src/pages/not-found';
