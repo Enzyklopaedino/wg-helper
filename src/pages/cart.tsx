@@ -1,7 +1,12 @@
+import { Checkbox } from "@/src/views/todo";
+
 export const Cart = () => {
 	return (
-		<div>
-			<h1>hello hello </h1>
-		</div>
+		<>
+			<div className="text-2xl mb-6">Einkaufsliste</div>
+      <div className="px-2">
+      <Checkbox />
+      </div>
+    </>
 	);
 };
