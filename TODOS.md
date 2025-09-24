@@ -1,0 +1,5 @@
+- [ ] Einkaufsliste
+- [ ] Mehrere Todo-Listen (Einkaufsliste, Möbelkaufliste, ...)
+- [ ] Menüpunkt mit Seitenwechsel
+- [ ] Kalender
+- [ ] Coinflip (Wer war zuletzt dran mit Döner, bzw wer bezahlt als nächstes)
