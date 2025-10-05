@@ -1,11 +1,12 @@
 'use client';
 import { TodoItem } from '@/components/todo-item';
-import { Checkbox } from '@/components/checkbox';
 
 export const Cart = () => {
+	console.log('parent');
 	return (
 		<div className="flex justify-center items-center h-screen">
-			<TodoItem />
+			{/* <TodoItem /> */}
+			<input type="text" placeholder="meep" />
 		</div>
 	);
 };

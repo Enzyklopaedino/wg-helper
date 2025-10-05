@@ -6,6 +6,9 @@ export default defineConfig({
 	output: {
 		assetPrefix: '',
 	},
+	html: {
+		template: './src/index.html',
+	},
 	distPath: {
 		js: './',
 		css: './',
