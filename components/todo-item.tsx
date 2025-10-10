@@ -10,10 +10,7 @@ export const TodoItem: FC<InputHTMLAttributes<HTMLInputElement>> = ({
 	const [checked, setChecked] = useState(false);
 
 	return (
-		<div
-			id={`todo-item-${Date.now()}`}
-			className="flex flex-row items-center space-x-4"
-		>
+		<div className="flex flex-row items-center space-x-4">
 			<Checkbox
 				className="peer"
 				onCheckedChange={(value: boolean) => setChecked(value)}
