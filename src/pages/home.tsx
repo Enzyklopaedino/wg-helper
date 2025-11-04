@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 export const Home = () => {
 	return (
-		<div className="flex justify-center items-center h-screen space-x-6">
+		<div className="flex justify-center align-center flex-row items-center h-screen space-x-6">
 			<Link to="/cart">
 				<button
 					type="button"
@@ -23,6 +23,12 @@ export const Home = () => {
 					</svg>
 				</button>
 			</Link>
+      <Link to="/cart">
+        <button
+					type="button"
+					className="text-bold bg-green-300 hover:bg-green-400 focus:ring-4 focus:ring-green-500 font-medium rounded-lg p-4 focus:outline-none flex items-center justify-center cursor-pointer text-green-900"
+				>pot</button>
+        </Link>
 		</div>
 	);
 };
