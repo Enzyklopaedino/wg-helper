@@ -26,8 +26,16 @@ export const Cart = () => {
 	// };
   
   const handleDelete = (id: string | undefined) => {
-    console.error(`id of the todo item that will be deleted: ${id}`)
-    setTodos(todos.filter((item) => item.id !== id))
+    console.debug(`id of the todo item that will be deleted: ${id}`)
+    setTodos(todos => todos.filter((item) => item.id !== id))
+    
+    if(todos.length === 1) { // 1 instead of 0 because useState is asynchronous and updates the array at a later time
+      console.log("wah :)")
+      const newTodo: TodoItemProps = {
+				id: `input-${Date.now()}-${crypto.randomUUID()}`,
+			};
+    setTodos([newTodo])
+    }
   }
 
 	return (
