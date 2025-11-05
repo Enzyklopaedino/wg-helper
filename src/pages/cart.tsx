@@ -1,4 +1,5 @@
 'use client';
+import { ScrollArea } from '@/components/scroll-area';
 import { TodoItem } from '@/components/todo-item';
 import { InputHTMLAttributes, useState } from 'react';
 
@@ -40,11 +41,13 @@ export const Cart = () => {
 
 	return (
 		<div className="flex justify-center items-center flex-col space-y-2 h-screen">
-			<ul className="mt-4 space-y-2">
+      <ScrollArea className="h-2/3 rounded-md" >
+        <ul className="mt-4 space-y-2 p-8 pb-4 pt-1">
 				{todos.map((todo) => (
 					<TodoItem key={todo.id} onKeyDown={handleKeyDown} onDelete={() => handleDelete(todo.id)} />
 				))}
 			</ul>
+      </ScrollArea>
 		</div>
 	);
 };
