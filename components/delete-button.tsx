@@ -1,8 +1,13 @@
-export const DeleteButton = () => {
+import { ButtonHTMLAttributes, FC } from "react";
+
+type DeleteButtonProps = ButtonHTMLAttributes<HTMLButtonElement>
+
+export const DeleteButton: FC<DeleteButtonProps> = ({onClick}) => {
 	return (
 		<button
 			type="button"
 			className="flex items-center justify-center cursor-pointer"
+      onClick={onClick}
 		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"

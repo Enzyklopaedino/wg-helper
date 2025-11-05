@@ -3,9 +3,12 @@ import { DeleteButton } from '@/components/delete-button';
 import { Input } from '@/components/input';
 import { FC, InputHTMLAttributes, useState } from 'react';
 
-export const TodoItem: FC<InputHTMLAttributes<HTMLInputElement>> = ({
+type TodoItemProps = InputHTMLAttributes<HTMLInputElement> & {onDelete: () => void }; 
+
+export const TodoItem: FC<TodoItemProps> = ({
 	value,
 	onKeyDown,
+  onDelete,
 }) => {
 	const [checked, setChecked] = useState(false);
 
@@ -22,7 +25,7 @@ export const TodoItem: FC<InputHTMLAttributes<HTMLInputElement>> = ({
 				autoFocus
 				disabled={checked}
 			/>
-			<DeleteButton />
+			<DeleteButton onClick={onDelete}/>
 		</div>
 	);
 };
