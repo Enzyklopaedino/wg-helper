@@ -7,6 +7,6 @@ export type TodoItemProps = InputHTMLAttributes<HTMLInputElement> & {};
 export const Cart = () => {
 	
 	return (
-    <TodoList />
+    <TodoList title="Boo"/>
 			);
 };
