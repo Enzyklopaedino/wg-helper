@@ -1,13 +1,13 @@
-import { ButtonHTMLAttributes, FC } from "react";
+import type { ButtonHTMLAttributes, FC } from 'react';
 
-type DeleteButtonProps = ButtonHTMLAttributes<HTMLButtonElement>
+type DeleteButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
 
-export const DeleteButton: FC<DeleteButtonProps> = ({onClick}) => {
+export const DeleteButton: FC<DeleteButtonProps> = ({ onClick }) => {
 	return (
 		<button
 			type="button"
 			className="flex items-center justify-center cursor-pointer"
-      onClick={onClick}
+			onClick={onClick}
 		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
@@ -16,6 +16,7 @@ export const DeleteButton: FC<DeleteButtonProps> = ({onClick}) => {
 				strokeWidth="1.5"
 				className="size-6 stroke-slate-700 hover:stroke-slate-500"
 			>
+				<title>delete-button</title>
 				<path
 					strokeLinecap="round"
 					strokeLinejoin="round"

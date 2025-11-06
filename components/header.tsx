@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 import wgLogo from './../public/wg-helper-icon.png';
 import { Link } from 'react-router-dom';
 

@@ -1,14 +1,10 @@
 'use client';
 
-import { FC, ComponentProps } from 'react';
+import type { ComponentProps } from 'react';
 import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
 import { CheckIcon } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
-
-type CheckboxProps = typeof CheckboxPrimitive.Root & {
-	className?: string;
-};
 
 export const Checkbox = ({
 	className,
