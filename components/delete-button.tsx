@@ -1,8 +1,9 @@
+import { cn } from '@/lib/utils';
 import type { ButtonHTMLAttributes, FC } from 'react';
 
 type DeleteButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
 
-export const DeleteButton: FC<DeleteButtonProps> = ({ onClick }) => {
+export const DeleteButton: FC<DeleteButtonProps> = ({ onClick, className }) => {
 	return (
 		<button
 			type="button"
@@ -14,7 +15,10 @@ export const DeleteButton: FC<DeleteButtonProps> = ({ onClick }) => {
 				fill="none"
 				viewBox="0 0 24 24"
 				strokeWidth="1.5"
-				className="size-6 stroke-slate-700 hover:stroke-slate-500"
+				className={cn(
+					'size-6 stroke-slate-700 hover:stroke-slate-500',
+					className,
+				)}
 			>
 				<title>delete-button</title>
 				<path

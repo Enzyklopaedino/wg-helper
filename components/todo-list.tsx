@@ -1,4 +1,5 @@
 'use client';
+import { DeleteButton } from '@/components/delete-button';
 import { ScrollArea } from '@/components/scroll-area';
 import { TodoItem } from '@/components/todo-item';
 import {
@@ -40,9 +41,21 @@ export const TodoList: FC<TodoListProps> = ({ title }) => {
 		}
 	};
 
+	const handleDeleteAll = () => {
+		console.debug('all todos will be deleted');
+		const newTodo: TodoItemProps = {
+			id: `input-${Date.now()}-${crypto.randomUUID()}`,
+		};
+		setTodos([newTodo]);
+	};
+
 	return (
 		<div className="flex justify-center items-center flex-col space-y-2 h-screen w-screen">
 			<h2 className="text-2xl py-2 px-6">{title}</h2>
+			<DeleteButton
+				className="stroke-red-700 hover:stroke-red-500"
+				onClick={handleDeleteAll}
+			/>
 			<ScrollArea className="h-2/3 rounded-md">
 				<ul className="mt-4 space-y-2 p-8 pb-4 pt-1">
 					{todos.map((todo) => (
