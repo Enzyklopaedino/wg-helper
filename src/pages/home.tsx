@@ -23,7 +23,8 @@ export const Home = () => {
 					</svg>
 				}
 			/>
-			<NavButton path="cart" color="orange" value="pot" />
+			<NavButton path="cart" color="green" value="pot" />
+			<NavButton path="coins" color="orange" value="coinflip" />
 		</div>
 	);
 };
