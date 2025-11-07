@@ -2,6 +2,7 @@
 import { DeleteButton } from '@/components/delete-button';
 import { ScrollArea } from '@/components/scroll-area';
 import { TodoItem } from '@/components/todo-item';
+import { cn } from '@/lib/utils';
 import {
 	type FC,
 	type InputHTMLAttributes,
@@ -10,9 +11,9 @@ import {
 } from 'react';
 
 export type TodoItemProps = InputHTMLAttributes<HTMLInputElement>;
-export type TodoListProps = { title: string };
+export type TodoListProps = { key: string; title: string; height: string };
 
-export const TodoList: FC<TodoListProps> = ({ title }) => {
+export const TodoList: FC<TodoListProps> = ({ title, height }) => {
 	const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
 		if (e.key === 'Enter') {
 			const newTodo: TodoItemProps = {
@@ -50,14 +51,19 @@ export const TodoList: FC<TodoListProps> = ({ title }) => {
 	};
 
 	return (
-		<div className="flex justify-center items-center flex-col space-y-2 h-screen w-screen">
+		<div
+			className={cn(
+				'flex justify-center items-center flex-col space-y-2 h-[70%]',
+				height,
+			)}
+		>
 			<h2 className="text-2xl py-2 px-6">{title}</h2>
 			<DeleteButton
 				className="stroke-red-700 hover:stroke-red-500"
 				onClick={handleDeleteAll}
 			/>
-			<ScrollArea className="h-2/3 rounded-md">
-				<ul className="mt-4 space-y-2 p-8 pb-4 pt-1">
+			<ScrollArea className="h-[90%] rounded-md">
+				<ul className="mt-4 px-6 pb-4 space-y-2">
 					{todos.map((todo) => (
 						<TodoItem
 							key={todo.id}
