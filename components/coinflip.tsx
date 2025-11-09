@@ -1,11 +1,12 @@
 import { type FC, useState } from 'react';
 
 type CoinflipProps = {
+	title?: string;
 	heads: string;
 	tails: string;
 };
 
-export const Cointurn: FC<CoinflipProps> = ({ heads, tails }) => {
+export const Cointurn: FC<CoinflipProps> = ({ title, heads, tails }) => {
 	const [coin, setCoin] = useState<string>(heads);
 
 	const handleClick = () => {
@@ -14,12 +15,12 @@ export const Cointurn: FC<CoinflipProps> = ({ heads, tails }) => {
 
 	return (
 		<button type="button" onClick={handleClick}>
-			{coin}
+			{`${title ? `${title}: ` : ''} ${coin}`}
 		</button>
 	);
 };
 
-export const Coinflip: FC<CoinflipProps> = ({ heads, tails }) => {
+export const Coinflip: FC<CoinflipProps> = ({ title, heads, tails }) => {
 	const [coin, setCoin] = useState<string>(heads);
 
 	const handleClick = () => {
@@ -28,7 +29,7 @@ export const Coinflip: FC<CoinflipProps> = ({ heads, tails }) => {
 
 	return (
 		<button type="button" onClick={handleClick}>
-			{coin}
+			{`${title ? `${title}: ` : ''} ${coin}`}
 		</button>
 	);
 };

@@ -23,7 +23,7 @@ export const Home = () => {
 					</svg>
 				}
 			/>
-			<NavButton path="cart" color="green" value="pot" />
+			<NavButton path="todo" color="green" value="todo" />
 			<NavButton path="coins" color="orange" value="coinflip" />
 		</div>
 	);
