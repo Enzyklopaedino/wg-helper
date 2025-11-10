@@ -24,8 +24,11 @@ export const Todo = () => {
 					</div>
 					<div className="flex flex-row items-center justify-between border-2 rounded-md px-2 py-1 space-x-3">
 						<Checkbox />
-						<input className="outline-none" />
-						{/* <div>bo</div> */}
+						<input
+							className="outline-none"
+							value="boo this a todo"
+							readOnly={true}
+						/>
 						<X className="h-4 w-4 min-w-4 min-h-4" />
 					</div>
 				</div>
