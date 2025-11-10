@@ -3,3 +3,6 @@
 - [ ] Menüpunkt mit Seitenwechsel
 - [ ] Kalender
 - [ ] Coinflip (Wer war zuletzt dran mit Döner, bzw wer bezahlt als nächstes)
+
+
+- [ ] Add speech bubble for not found text
