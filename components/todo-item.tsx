@@ -7,15 +7,15 @@ type TodoItemProps = InputHTMLAttributes<HTMLInputElement> & {
 	onDelete: () => void;
 };
 
-export const TodoItem: FC<TodoItemProps> = ({ value, onKeyDown, onDelete }) => {
+export const TodoItem: FC<TodoItemProps> = ({ value, onKeyDown }) => {
 	const [checked, setChecked] = useState(false);
 
 	return (
 		<div className="flex flex-row items-center space-x-4">
-			<Checkbox
-				className="peer"
-				onCheckedChange={(value: boolean) => setChecked(value)}
-			/>
+			{/* <Checkbox */}
+			{/* 	className="peer" */}
+			{/* 	onCheckedChange={(value: boolean) => setChecked(value)} */}
+			{/* /> */}
 			<Input
 				className="transition-all peer-data-[state=checked]:line-through peer-data-[state=checked]:text-muted-foreground"
 				value={value}
@@ -23,7 +23,6 @@ export const TodoItem: FC<TodoItemProps> = ({ value, onKeyDown, onDelete }) => {
 				autoFocus
 				disabled={checked}
 			/>
-			<DeleteButton onClick={onDelete} />
 		</div>
 	);
 };

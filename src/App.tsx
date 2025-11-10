@@ -10,7 +10,7 @@ import { Todo } from '@/src/pages/todo';
 const App = () => {
 	return (
 		<BrowserRouter>
-			<Header title="WG-Helper ^^" />
+			<Header title="WG-Helper" />
 			<Routes>
 				<Route path="/" element={<Home />} />
 				<Route path="/cart" element={<Cart />} />
